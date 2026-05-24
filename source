@@ -196,46 +196,40 @@ end)
 local Window = Rayfield:CreateWindow({
 	Name = "JIT HUB",
 	Icon = "shield",
-	LoadingTitle = "Owner Panel",
+	LoadingTitle = "JIT HUB LOADING",
 	LoadingSubtitle = "fuck roblox",
 	Theme = "Default",
 	ToggleUIKeybind = Enum.KeyCode.Minus,
 	DisableRayfieldPrompts = true,
 	DisableBuildWarnings = false,
+
 	ConfigurationSaving = {
 		Enabled = true,
 		FolderName = "OwnerPanel",
 		FileName = "Config",
 	},
-	Discord = { Enabled = false },
+
+	-- ==================
+	-- DISCORD + KEY SYSTEM
+	-- ==================
+	Discord = {
+		Enabled = true,
+		Invite = "qpK6VCMBCa",
+		RememberJoins = true
+	},
+
 	KeySystem = false,
-})
-
-UserInputService.InputBegan:Connect(function(input, gameProcessed)
-	if input.KeyCode == Enum.KeyCode.Minus and not gameProcessed then
-		UserInputService.MouseIconEnabled = Rayfield:IsVisible()
-	end
-end)
-
--- ==================
--- KEYSYSTEM/DISCORD
--- ==================
-   Discord = {
-      Enabled = true, -- Prompt the user to join your Discord server if their executor supports it
-      Invite = "https://discord.gg/qpK6VCMBCa", -- The Discord invite code, do not include Discord.gg/. E.g. Discord.gg/ABCD would be ABCD
-      RememberJoins = true -- Set this to false to make them join the Discord every time they load it up
-   },
-
-   KeySystem = false, -- Set this to true to use our key system
-   KeySettings = {
-      Title = "JIT HUB KEY SYSTEM",
-      Subtitle = "Key System",
-      Note = "Join the discord to get a key", -- Use this to tell the user how to get a key
-      FileName = "Key", -- It is recommended to use something unique, as other scripts using Rayfield may overwrite your key file
-      SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
-      GrabKeyFromSite = true, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
-      Key = {"https://raw.githubusercontent.com/TheMaskedGod/jit-hub/refs/heads/main/keys?token=GHSAT0AAAAAAD57QMFN3RZHEJKX3X7IRKTO2QTM52Q"} -- List of keys that the system will accept, can be RAW file links (pastebin, github, etc.) or simple strings ("hello", "key22")
-   }
+	KeySettings = {
+		Title = "JIT HUB KEY SYSTEM",
+		Subtitle = "Key System",
+		Note = "Join the discord to get a key",
+		FileName = "Key",
+		SaveKey = true,
+		GrabKeyFromSite = true,
+		Key = {
+			"https://raw.githubusercontent.com/TheMaskedGod/jit-hub-keys/main/keys"
+		}
+	}
 })
 
 -- ==================
