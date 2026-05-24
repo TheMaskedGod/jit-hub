@@ -194,10 +194,10 @@ end)
 -- ==================
 
 local Window = Rayfield:CreateWindow({
-	Name = "Owner Panel",
+	Name = "JIT HUB",
 	Icon = "shield",
 	LoadingTitle = "Owner Panel",
-	LoadingSubtitle = "ESP · Aim Assist · Movement",
+	LoadingSubtitle = "fuck roblox",
 	Theme = "Default",
 	ToggleUIKeybind = Enum.KeyCode.Minus,
 	DisableRayfieldPrompts = true,
